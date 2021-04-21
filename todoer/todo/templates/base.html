@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>{% block title %}{% endblock %} - Todo List</title>
+    <!-- <link rel='stylesheet' href="{{ url_for('static', filename='style.css') }}"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="{{ url_for('todo.index') }}">EcoTech</a>
+            <nav>
+            <!-- <h1>¡Bienvenido a ReTech!</h1> -->
+            <ul class="pure-menu-list">
+                {% if g.user %}
+                    <li><span>{{ g.user['username'] }}</span></li>
+                    <li class="pure-menu-item"><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                {% else %}
+                    <li class="pure-menu-item"><a href="{{ url_for('auth.register') }}">Register</a></li>
+                    <li class="pure-menu-item"><a href="{{ url_for('auth.login') }}">Login</a></li>
+                {% endif %}
+            </ul>
+            </nav>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+     <section class="content">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+<!--         {% for message in get_flashed_messages() %}
+        <div class="flash">{{message}}</div>
+        {% endfor %} -->
+        {% block content %}
+        {% endblock %}
+    </section>
+</body>

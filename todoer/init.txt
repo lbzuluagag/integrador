@@ -1,0 +1,7 @@
+set FLASK_APP=todo
+set FLASK_DATABASE_HOST=localhost
+set FLASK_DATABASE_PASSWORD=
+set FLASK_DATABASE_USER=root
+set FLASK_DATABASE=flask
+flask init-db //comando indicado en el archivo db
+set FLASK_ENV=development

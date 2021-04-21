@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}Horario{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+    {% for key, value in horario.items() %}
+        <div>Key: {{key}}</div>
+        <div>Value: {{value}}</div>
+    {% endfor %}
+{% endblock %}

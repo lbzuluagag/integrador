@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <div class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head">{% block title %}save is more{% endblock %}</h1>
+            <p class="splash-subhead"> Revolutionize energy consumption in your home </p>
+            <a class="pure-button pure-button-primary" href="{{ url_for('todo.create') }}">Get started</a>
+            {% if g.user %}
+                <a class="action" href="{{ url_for('todo.create') }}">Nuevo</a>
+            {% endif %}
+        </div>
+
+        
+    </div>
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for todo in todos %}
+    <li class="todo">
+        <div>
+            
+                {% if todo['completed'] == 1 %}
+                <strike>{{ todo['description']}}</strike>
+                {% else %}
+                {{ todo['description']}}
+                {% endif %}
+            <div class="about">{{ todo['created_at'].strftime('%y-%m-%d') }}</div>
+            <a class="action" href="{{ url_for('todo.update', id=todo['id']) }}">Editar</a>
+        </div>
+    </li>
+    {% if not loop.last %}
+    <hr>
+    {% endif%}
+    {% endfor %}
+</ul>
+{% endblock %}
