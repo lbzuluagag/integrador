@@ -194,5 +194,13 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
     .l-box-lrg {
         border: none;
     }
+    .l-box-lrg {
+        padding: 2em;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .is-center {
+        text-align: center;
+    }
 
 }

@@ -5,9 +5,20 @@
 
 
 {% block content %}
-    {% for key, value in horario.items() %}
-        <div>Key: {{key}}</div>
-        <div>Value: {{value}}</div>
-        <br>
-    {% endfor %}
+    <table class="pure-table pure-table-bordered">
+        <thead>
+            <tr>
+                <th> Hora</th>
+                <th> Electrodomésticos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in horario.items() %}
+                <tr>
+                    <td>{{key}}</td>
+                    <td>{{value}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

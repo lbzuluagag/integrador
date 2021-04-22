@@ -14,7 +14,10 @@
             <!-- <h1>¡Bienvenido a ReTech!</h1> -->
             <ul class="pure-menu-list">
                 {% if g.user %}
-                    <li><span>{{ g.user['username'] }}</span></li>
+                    <li class="pure-menu-item"> Bienvenido {{ g.user['username'] }}! </li>
+                    <br>
+                    <li class="pure-menu-item"><a href="{{ url_for('todo.form') }}">Empezar</a></li>
+                    <li class="pure-menu-item"><a href="{{ url_for('todo.horario') }}">Mi horario</a></li>
                     <li class="pure-menu-item"><a href="{{ url_for('auth.logout') }}">Cerrar sesión</a></li>
                 {% else %}
                     <li class="pure-menu-item"><a href="{{ url_for('auth.register') }}">Registrarse</a></li>
