@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}Ingresa tus datos{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+    <form method="POST" class="pure-form"> 
+        <label for="esolar">Energía solar que genera (MWh)</label>
+        <br>
+        <input placeholder="MWh" name="esolar" id="esolar" required/>
+        <br>
+        <br>
+        <label for="eeolica">Energía eólica que genera (MWh)</label>
+        <br>
+        <input placeholder="MWh" name="eeolica" id="eeolica" required/>
+        <br>
+        <br>
+        <label for="ebiomasa">Energía eólica de biomasa (MWh)</label>
+        <br>
+        <input placeholder="MWh" name="ebiomasa" id="ebiomasa" required/>
+        <br>
+        <br>
+        <br>
+        <button type="submit" value="enviar" class="pure-button pure-button-primary">Enviar</button>
+    </form>
+{% endblock %}

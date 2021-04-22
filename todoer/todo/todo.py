@@ -88,5 +88,10 @@ def delete():
 def horario():
     horario=mongo.db.schedule.find_one()
     horario.pop("_id")
-    print(horario)
     return render_template('todo/horario.html', horario=horario)
+
+@bp.route('/form', methods=['POST', 'GET'])
+@login_required
+def form():
+
+    return render_template('todo/form.html')

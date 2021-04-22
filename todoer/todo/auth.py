@@ -87,4 +87,4 @@ def login_required(view):
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('auth.register'))
+    return redirect(url_for('todo.index'))

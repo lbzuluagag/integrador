@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>{% block title %}{% endblock %} - Todo List</title>
+    <!-- <title>{% block title %}{% endblock %} - Todo List</title> -->
     <!-- <link rel='stylesheet' href="{{ url_for('static', filename='style.css') }}"> -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
@@ -9,16 +9,16 @@
 <body>
     <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="{{ url_for('todo.index') }}">EcoTech</a>
+            <a class="pure-menu-heading" href="{{ url_for('todo.index') }}">ReTech</a>
             <nav>
             <!-- <h1>¡Bienvenido a ReTech!</h1> -->
             <ul class="pure-menu-list">
                 {% if g.user %}
                     <li><span>{{ g.user['username'] }}</span></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    <li class="pure-menu-item"><a href="{{ url_for('auth.logout') }}">Cerrar sesión</a></li>
                 {% else %}
-                    <li class="pure-menu-item"><a href="{{ url_for('auth.register') }}">Register</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('auth.login') }}">Login</a></li>
+                    <li class="pure-menu-item"><a href="{{ url_for('auth.register') }}">Registrarse</a></li>
+                    <li class="pure-menu-item"><a href="{{ url_for('auth.login') }}">Iniciar sesión</a></li>
                 {% endif %}
             </ul>
             </nav>

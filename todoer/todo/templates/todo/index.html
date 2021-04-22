@@ -3,15 +3,48 @@
 {% block header %}
     <div class="splash-container">
         <div class="splash">
-            <h1 class="splash-head">{% block title %}save is more{% endblock %}</h1>
-            <p class="splash-subhead"> Revolutionize energy consumption in your home </p>
-            <a class="pure-button pure-button-primary" href="{{ url_for('todo.create') }}">Get started</a>
+            <h1 class="splash-head">{% block title %}ahorra hoy, vive mañana{% endblock %}</h1>
+            <p class="splash-subhead"> Revoluciona el consumo de energía en tu hogar o lugar de trabajo</p>
+            <!-- <a class="pure-button pure-button-primary" href="{{ url_for('todo.create') }}">Get started</a> -->
             {% if g.user %}
-                <a class="action" href="{{ url_for('todo.create') }}">Nuevo</a>
+                <!-- <a class="action" href="{{ url_for('todo.create') }}">Nuevo</a> -->
+                <a class="pure-button pure-button-primary" href="{{ url_for('todo.horario') }}">Get started</a>
+            {% else %}
+                <a class="pure-button pure-button-primary" href="{{ url_for('auth.login') }}">Get started</a>
             {% endif %}
         </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="content">        
+            <h2 class="content-head is-center">CÓMO FUNCIONA</h2>
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">Alo</h3>
+                    <p>jfañslk añlksdjf ñlakdjf 0ejjtktjkaj klsdjf laskdjf laksjdjf kj akjds flakrywttwtal alkj</p>
+                </div>
+            </div>
 
-        
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">Alo</h3>
+                    <p>jfañslk añlksdjf ñlakdjf 0ejjtktjkaj klsdjf laskdjf laksjdjf kj akjds flakrywttwtal alkj</p>
+                </div>
+            </div>
+
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">Alo</h3>
+                    <p>jfañslk añlksdjf ñlakdjf 0ejjtktjkaj klsdjf laskdjf laksjdjf kj akjds flakrywttwtal alkj</p>
+                </div>
+            </div>
+
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <h3 class="content-subhead">Alo</h3>
+                    <p>jfañslk añlksdjf ñlakdjf 0ejjtktjkaj klsdjf laskdjf laksjdjf kj akjds flakrywttwtal alkj</p>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 

@@ -1,0 +1,7 @@
+flask run --host=0.0.0.0 --port=8080
+ctrl z
+bg 
+disown
+sudo lsof -i -P -n | grep LISTEN
+sudo kill -9 `sudo lsof -t -i:8080`
+ec2-54-174-241-241.compute-1.amazonaws.com
