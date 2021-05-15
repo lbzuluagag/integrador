@@ -93,5 +93,19 @@ def horario():
 @bp.route('/form', methods=['POST', 'GET'])
 @login_required
 def form():
-
+    if request.method== "POST":
+        print(request.form['esolar'])
+        solar = request.form['esolar']
+        eolica = request.form['eeolica']
+        biomasa = request.form['ebiomasa']
+        form_colletion = mongo.db.form
+        form_colletion.delete_many({})
+        form_colletion.insert_one({
+            'solar': solar,
+            'eolica': eolica,
+            'biomasa': biomasa
+        })
+        #caputrar datos y supongo mandarlos a la base de datos
+        #pendiente determinar tabla y campos para guardar eso
     return render_template('todo/form.html')
+

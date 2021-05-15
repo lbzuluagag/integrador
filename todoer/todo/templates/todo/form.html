@@ -5,7 +5,7 @@
 
 
 {% block content %}
-    <form method="POST" class="pure-form"> 
+    <form action="{{ url_for('todo.form', a=esolar,b=eeolica,c=ebiomasa) }}" method="POST" class="pure-form"> 
         <label for="esolar">Energía solar que genera (MWh)</label>
         <br>
         <input placeholder="MWh" name="esolar" id="esolar" required/>
@@ -24,4 +24,5 @@
         <br>
         <button type="submit" value="enviar" class="pure-button pure-button-primary">Enviar</button>
     </form>
+
 {% endblock %}
